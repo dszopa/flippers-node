@@ -7,34 +7,34 @@
 //     }
 // });
 
-var http = require('http');
-var https = require('https');
+import http from 'http';
+import https from 'https';
 
-var options = {
-    host: 'api.rsbuddy.com',
-    path: '/grandExchange?a=guidePrice&i=554'
-}
+const options = {
+  host: 'api.rsbuddy.com',
+  path: '/grandExchange?a=guidePrice&i=554',
+};
 
-var options2 = {
-    host: 'rsbuddy.com',
-    path: '/exchange/summary.json'
-}
+const options2 = {
+  host: 'rsbuddy.com',
+  path: '/exchange/summary.json',
+};
+
 
 https.get(options2, (res) => {
-
   console.log(`Got response: ${res.statusCode}`);
   // consume response body
-//   res.resume();
-    var body = '';
-    res.on('data', (chunk) => {
-        body += chunk;
-    });
+  // res.resume();
+  let body = '';
+  res.on('data', (chunk) => {
+    body += chunk;
+  });
 
-    res.on('end', () => {
-        console.log('No more data in response');
-        var results = JSON.stringify(body);
-        console.log(results);
-    })
+  res.on('end', () => {
+    console.log('No more data in response');
+    const results = JSON.parse(body);
+    console.log(results);
+  });
 }).on('error', (e) => {
   console.log(`Got error: ${e.message}`);
 });

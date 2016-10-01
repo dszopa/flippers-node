@@ -1,21 +1,10 @@
 # Flippers
-Fun with the Old School Runescape Grand Exchange.
+A node package to get and use the Old School Runescape Grand Exchange data.
 
 Example usage:
-```go
-package main
+```javascript
+import flippers from 'flippers'
 
-import (
-	"github.com/nokaa/flippers"
-	"log"
-)
-
-func main() {
-	item, err := GetItem("1519")
-	if err != nil {
-		log.Println(err)
-		return
-	}
-	log.Println(item)
-}
+let itemData = flippers.getItemById(554);
+console.log(itemData);
 ```

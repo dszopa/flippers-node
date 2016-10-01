@@ -1,11 +1,11 @@
 {
   "name": "flippers-node",
   "version": "1.0.0",
-  "description": "Fun with the Old School Runescape Grand Exchange.",
+  "description": "A node package to get and use the Old School Runescape Grand Exchange data.",
   "main": "flippers.js",
   "scripts": {
-    "start": "babel-node flippers.js",
-    "build": "babel flippers.js -d lib",
+    "start": "babel-node lib/scriptRunner.js",
+    "build": "babel lib/flippers.js -d lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
